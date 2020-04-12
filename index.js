@@ -1,3 +1,4 @@
+require('dotenv').config();
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
@@ -43,4 +44,5 @@ bot.on('guildMemberAdd', async (member) => {
     channel.send(`Welcome to the server, ${member}`);
 });
 
-bot.login('Njc0MzgwMDAxNTc0OTEyMDQ4.XpJaFg.huHFda0IZPTxqTEJOEbARMsNNmY')
+
+bot.login(`${process.env.DISCORD_TOKEN}`);
