@@ -2,30 +2,20 @@
 import { config } from "dotenv";
 config();
 
+import { Client } from "discord.js";
+
 // Initialization
-
-import Discord, { Client } from "discord.js";
-
-const bot: Client = new Discord.Client();
+const bot: Client = new Client();
 
 import { messages } from "./functions/index";
 
 // Initialitation
-bot.on("ready", async () => {
-  await console.log("Bot is ready as", bot.user.username);
+bot.once("ready", async () => {
+  await console.log("Bot is ready as", bot.user?.username);
 });
 
+// Functionality
 bot.on("message", messages);
 
-bot.on("guildMemberAdd", async (member) => {
-  // Send the message to a designated channel on a server:
-  const channel = await member.guild.channels.cache.find(
-    (ch) => ch.name === "member-log"
-  );
-  // Do nothing if the channel wasn't found on this server
-  if (!channel) return;
-  // Send the message, mentioning the member
-  channel.send(`Welcome to the server, ${member}`);
-});
-
+// Login
 bot.login(`${process.env.DISCORD_TOKEN}`);
