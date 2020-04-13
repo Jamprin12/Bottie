@@ -1,0 +1,16 @@
+{
+    "commands": [
+        {
+            "command": "!servers",
+            "info": "Show all server for your games"
+        },
+        {
+            "command": "!servers add <name server>",
+            "info": "Add your server for your friends"
+        },
+        {
+            "command": "!kick <username>",
+            "info": "For kick users"
+        }
+    ]
+}
