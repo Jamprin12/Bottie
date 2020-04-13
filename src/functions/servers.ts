@@ -6,7 +6,7 @@ export const servers = (msg: Message) => {
   // Receiving  the messages
   if (msg.content === "!servers") {
     if (!servers.length) {
-      msg.channel.send("No hay servidores");
+      msg.channel.send("There aren't servers");
     } else {
       msg.channel.send(servers);
     }
@@ -19,6 +19,6 @@ export const servers = (msg: Message) => {
     servers.push(serverName);
     // fs.writeFile(dataPath, JSON.stringify(servers), () => console.log("Works"));
 
-    msg.channel.send("Ya ha sido agregado el servidor " + serverName);
+    msg.channel.send("Already has added the server " + serverName);
   }
 };

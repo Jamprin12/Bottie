@@ -1,2 +1,3 @@
 # Bottie
-A Dircord Bot
+
+A Dircord Bot using Typescript

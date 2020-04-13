@@ -2,7 +2,7 @@
 import { config } from "dotenv";
 config();
 
-import { Client } from "discord.js";
+import { Client, Message } from "discord.js";
 
 // Initialization
 const bot: Client = new Client();
@@ -15,7 +15,9 @@ bot.once("ready", async () => {
 });
 
 // Functionality
-bot.on("message", messages);
+bot.on("message", (msg: Message) => {
+  messages(msg);
+});
 
 // Login
 bot.login(`${process.env.DISCORD_TOKEN}`);
