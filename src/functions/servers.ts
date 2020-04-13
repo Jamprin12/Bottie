@@ -1,7 +1,10 @@
 import { Message } from "discord.js";
+import fs from "fs";
+import { servers as server } from "../data/servers.json";
 
 export const servers = (msg: Message) => {
-  const servers = ["skyzora.aternos.me"];
+  const servers = server;
+  console.log(servers);
 
   // Receiving  the messages
   if (msg.content === "!servers") {
@@ -17,7 +20,6 @@ export const servers = (msg: Message) => {
     const serverName = split[2];
 
     servers.push(serverName);
-    // fs.writeFile(dataPath, JSON.stringify(servers), () => console.log("Works"));
 
     msg.channel.send("Already has added the server " + serverName);
   }
