@@ -1,0 +1,2 @@
+# Bottie
+A Dircord Bot
