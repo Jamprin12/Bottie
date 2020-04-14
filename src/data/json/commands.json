@@ -13,12 +13,28 @@
       "info": "Add your server for your friends"
     },
     {
+      "command": "!servers remove all",
+      "info": "Remove all servers"
+    },
+    {
       "command": "!kick <username>",
       "info": "For kick users"
     },
     {
       "command": "!link <page>",
       "info": "Enjoy share page with your friends"
+    },
+    {
+      "command": "!connect v",
+      "info": "Connect to voice channel for listen music"
+    },
+    {
+      "command": "!disconnect v",
+      "info": "Diconnet to voice channel"
+    },
+    {
+      "command": "!clear",
+      "info": "Clear 100 messages"
     }
   ]
 }

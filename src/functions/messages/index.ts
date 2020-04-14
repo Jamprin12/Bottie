@@ -1,15 +1,15 @@
 import { Message } from "discord.js";
-import { links } from "./links";
-import { servers } from "./servers";
-import { members } from "./mebers";
-import { help } from "./help";
-import { channel } from "./channel";
+import { Links } from "./links";
+import { Servers } from "./servers";
+import { Members } from "./mebers";
+import { Help } from "./help";
+import { Channel } from "./channel";
 
 // Functions
 export const messages = async (msg: Message) => {
-  channel(msg);
-  links(msg);
-  servers(msg);
-  members(msg);
-  help(msg);
+  Channel(msg);
+  Links(msg);
+  Servers(msg);
+  Members(msg);
+  Help(msg);
 };

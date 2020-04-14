@@ -1,12 +1,13 @@
 import { Message } from "discord.js";
-import { link } from "../../data/config.json";
+import { link } from "../../data/json/config.json";
+import links from "../../data/json/links.json";
 
-export const links = (msg: Message) => {
+export const Links = (msg: Message) => {
   if (msg.content === link + " pin") {
-    msg.channel.send("https://pinterest.com/");
+    msg.channel.send(links[0]);
   }
 
   if (msg.content === link + " insta") {
-    msg.channel.send("https://instagram.com/");
+    msg.channel.send(links[1]);
   }
 };

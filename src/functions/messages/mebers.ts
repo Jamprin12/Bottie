@@ -1,7 +1,7 @@
 import { Message } from "discord.js";
-import { main } from "../../data/config.json";
+import { main } from "../../data/json/config.json";
 
-export const members = async (msg: Message) => {
+export const Members = async (msg: Message) => {
   if (msg.content === main + "kick") {
     if (msg.member?.hasPermission(["KICK_MEMBERS"])) {
       const member = msg.mentions.members?.first();

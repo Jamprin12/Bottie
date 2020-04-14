@@ -1,12 +1,12 @@
 import { Message } from "discord.js";
-import { main } from "../../data/config.json";
-import { servers as server } from "../../data/servers.json";
+import { main } from "../../data/json/config.json";
+import { servers as server } from "../../data/json/servers.json";
 import fs from "fs";
 import path from "path";
 
-export const servers = async (msg: Message) => {
+export const Servers = async (msg: Message) => {
   const data = server;
-  const servers = data; 
+  const servers = data;
 
   // Receiving  the messages
   if (msg.content === main + "servers") {
