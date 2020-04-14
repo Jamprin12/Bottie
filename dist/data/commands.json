@@ -1,6 +1,10 @@
 {
     "commands": [
         {
+            "command": "!help",
+            "info": "Show all command of bot"
+        },
+        {
             "command": "!servers",
             "info": "Show all server for your games"
         },
@@ -11,6 +15,10 @@
         {
             "command": "!kick <username>",
             "info": "For kick users"
+        },
+        {
+            "command": "!link <page>",
+            "info": "Enjoy share page with your friends"
         }
     ]
 }

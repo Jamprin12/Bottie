@@ -6,7 +6,7 @@ dotenv_1.config();
 const discord_js_1 = require("discord.js");
 // Initialization
 const bot = new discord_js_1.Client();
-const index_1 = require("./functions/index");
+const index_1 = require("./functions/messages/index");
 // Initialitation
 bot.once("ready", async () => {
     var _a;
@@ -16,5 +16,9 @@ bot.once("ready", async () => {
 bot.on("message", (msg) => {
     index_1.messages(msg);
 });
+// Depurations
+bot.on("error", (e) => console.error(e));
+bot.on("warn", (e) => console.warn(e));
+bot.on("debug", (e) => console.info(e));
 // Login
 bot.login(`${process.env.DISCORD_TOKEN}`);
