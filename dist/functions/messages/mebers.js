@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const config_json_1 = require("../../data/config.json");
-exports.members = async (msg) => {
+const config_json_1 = require("../../data/json/config.json");
+exports.Members = async (msg) => {
     var _a, _b;
     if (msg.content === config_json_1.main + "kick") {
         if ((_a = msg.member) === null || _a === void 0 ? void 0 : _a.hasPermission(["KICK_MEMBERS"])) {

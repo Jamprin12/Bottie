@@ -1,11 +1,15 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const config_json_1 = require("../../data/config.json");
-exports.links = (msg) => {
+const config_json_1 = require("../../data/json/config.json");
+const links_json_1 = __importDefault(require("../../data/json/links.json"));
+exports.Links = (msg) => {
     if (msg.content === config_json_1.link + " pin") {
-        msg.channel.send("https://pinterest.com/");
+        msg.channel.send(links_json_1.default[0]);
     }
     if (msg.content === config_json_1.link + " insta") {
-        msg.channel.send("https://instagram.com/");
+        msg.channel.send(links_json_1.default[1]);
     }
 };

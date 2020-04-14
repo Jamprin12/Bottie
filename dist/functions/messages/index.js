@@ -7,9 +7,9 @@ const help_1 = require("./help");
 const channel_1 = require("./channel");
 // Functions
 exports.messages = async (msg) => {
-    channel_1.channel(msg);
-    links_1.links(msg);
-    servers_1.servers(msg);
-    mebers_1.members(msg);
-    help_1.help(msg);
+    channel_1.Channel(msg);
+    links_1.Links(msg);
+    servers_1.Servers(msg);
+    mebers_1.Members(msg);
+    help_1.Help(msg);
 };

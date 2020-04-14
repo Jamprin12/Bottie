@@ -3,11 +3,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const config_json_1 = require("../../data/config.json");
-const servers_json_1 = require("../../data/servers.json");
+const config_json_1 = require("../../data/json/config.json");
+const servers_json_1 = require("../../data/json/servers.json");
 const fs_1 = __importDefault(require("fs"));
 const path_1 = __importDefault(require("path"));
-exports.servers = async (msg) => {
+exports.Servers = async (msg) => {
     const data = servers_json_1.servers;
     const servers = data;
     // Receiving  the messages
