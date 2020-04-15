@@ -19,7 +19,7 @@ export const Servers = async (msg: Message) => {
     }
   }
 
-  if (msg.content.startsWith(main + "server add")) {
+  if (msg.content.startsWith(main + "servers add")) {
     const split = msg.content.split(" ");
     const serverName = split[2];
 
