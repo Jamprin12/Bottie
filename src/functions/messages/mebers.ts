@@ -3,7 +3,7 @@ import { main } from "../../data/json/config.json";
 
 export const Members = async (msg: Message) => {
   if (msg.content === main + "kick") {
-    if (msg.member?.hasPermission(["KICK_MEMBERS"])) {
+    if (msg.member?.hasPermission("ADMINISTRATOR")) {
       const member = msg.mentions.members?.first();
       if (member) {
         const kickMember = await member.kick();
