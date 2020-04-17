@@ -35,6 +35,18 @@
     {
       "command": "!clear",
       "info": "Clear 100 messages"
+    },
+    {
+      "command": "!rules",
+      "info": "Show all rules for server (discord) and game"
+    },
+    {
+      "command": "!rules server",
+      "info": "Show all rules for only server"
+    },
+    {
+      "command": "!rules game",
+      "info": "Show all rules for only game (in #reglas channel"
     }
   ]
 }

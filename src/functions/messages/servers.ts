@@ -13,8 +13,8 @@ export const Servers = async (msg: Message) => {
     if (!servers.length) {
       msg.channel.send("There aren't servers");
     } else {
-      server.forEach(async (server: string) => {
-        await msg.channel.send(`${server}`);
+      server.forEach(async (server: string, i: number) => {
+        await msg.channel.send(`${i + 1}: ${server}`);
       });
     }
   }
@@ -46,7 +46,7 @@ export const Servers = async (msg: Message) => {
     });
 
     const serversJSON = {
-      servers,
+      servers: [],
     };
 
     fs.writeFile(
