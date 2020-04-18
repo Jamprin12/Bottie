@@ -2,12 +2,12 @@ import { Message } from "discord.js";
 import { link } from "../../data/json/config.json";
 import links from "../../data/json/links.json";
 
-export const Links = (msg: Message) => {
+export const Links = async (msg: Message) => {
   if (msg.content === link + " pin") {
-    msg.channel.send(links[0]);
+    msg.channel.send(`${links[0].pin}`);
   }
 
   if (msg.content === link + " insta") {
-    msg.channel.send(links[1]);
+    msg.channel.send(`${links[1].insta}`);
   }
 };

@@ -8,7 +8,7 @@ export const Help = (msg: Message) => {
     const helpCommand = data;
 
     helpCommand.forEach(async (commands: any) => {
-      await msg.channel.send(commands);
+        await msg.channel.send(`${commands.command} : ${commands.info}`);
     });
   }
 };

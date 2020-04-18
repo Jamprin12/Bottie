@@ -25,28 +25,16 @@
       "info": "Enjoy share page with your friends"
     },
     {
-      "command": "!connect v",
+      "command": "!music join",
       "info": "Connect to voice channel for listen music"
     },
     {
-      "command": "!disconnect v",
+      "command": "!music leave",
       "info": "Diconnet to voice channel"
     },
     {
       "command": "!clear",
       "info": "Clear 100 messages"
-    },
-    {
-      "command": "!rules",
-      "info": "Show all rules for server (discord) and game"
-    },
-    {
-      "command": "!rules server",
-      "info": "Show all rules for only server"
-    },
-    {
-      "command": "!rules game",
-      "info": "Show all rules for only game (in #reglas channel"
     }
   ]
 }

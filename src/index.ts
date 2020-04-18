@@ -9,7 +9,6 @@ const bot: Client = new Client();
 
 import { messages } from "./functions/messages/index";
 
-
 // Initialitation
 bot.once("ready", async () => {
   await console.log("Bot is ready as", bot.user?.username);
@@ -27,5 +26,3 @@ bot.on("debug", (e: any) => console.info(e));
 
 // Login
 bot.login(`${process.env.DISCORD_TOKEN}`);
-
-// 674379642173521957
