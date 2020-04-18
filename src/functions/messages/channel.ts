@@ -7,7 +7,7 @@ import {
 } from "../actions/music";
 
 export const Channel = async (msg: Message) => {
-  if (msg.content === main + "clear") {
+  if (msg.content === main + "clear" || msg.content === "cls") {
     try {
       await msg.channel.bulkDelete(100);
     } catch (error) {

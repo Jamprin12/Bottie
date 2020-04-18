@@ -22,4 +22,3 @@ bot.on("warn", (e) => console.warn(e));
 bot.on("debug", (e) => console.info(e));
 // Login
 bot.login(`${process.env.DISCORD_TOKEN}`);
-// 674379642173521957

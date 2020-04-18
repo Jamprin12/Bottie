@@ -4,6 +4,8 @@ import { servers as server } from "../../data/json/servers.json";
 import fs from "fs";
 import path from "path";
 
+const pathServer = path.join(__dirname, "../../data/json/servers.json")
+
 export const Servers = async (msg: Message) => {
   const data = server;
   const servers = data;
@@ -23,20 +25,29 @@ export const Servers = async (msg: Message) => {
     const split = msg.content.split(" ");
     const serverName = split[2];
 
-    servers.push(serverName);
+    if (
+      serverName === undefined ||
+      serverName === " " ||
+      serverName === "undefined"
+    ) {
+      msg.channel.send("The name server is invalid");
+    } else if (serverName === "<name") {
+      return;
+    } else {
+      servers.push(serverName);      
+      const serversJSON = {
+        servers,
+      };
 
-    const serversJSON = {
-      servers,
-    };
+      fs.writeFile(
+        pathServer,  
+        JSON.stringify(serversJSON),
+        finish
+      );
 
-    fs.writeFile(
-      path.join(__dirname, "../data/servers.json"),
-      JSON.stringify(serversJSON),
-      finish
-    );
-
-    async function finish() {
-      await msg.channel.send("Already has added the server " + serverName);
+      async function finish() {
+        await msg.channel.send("Already has added the server " + serverName);
+      }
     }
   }
 
@@ -50,7 +61,28 @@ export const Servers = async (msg: Message) => {
     };
 
     fs.writeFile(
-      path.join(__dirname, "../data/servers.json"),
+      pathServer,
+      JSON.stringify(serversJSON),
+      finish
+    );
+
+    async function finish() {
+      await msg.channel.send("Already has removed all servers");
+    }
+  }
+
+  if (msg.content.startsWith(main + "servers remove")) {
+    const split = msg.content.split(" ");
+    const serverIndex = split[2];
+    const index = parseInt(serverIndex);
+    server.splice(index, 1);
+
+    const serversJSON = {
+      servers,
+    };
+
+    fs.writeFile(
+      pathServer,
       JSON.stringify(serversJSON),
       finish
     );
