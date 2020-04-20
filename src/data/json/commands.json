@@ -13,8 +13,12 @@
       "info": "Add your server for your friends"
     },
     {
-      "command": "!servers remove all",
+      "command": "!servers clean all",
       "info": "Remove all servers"
+    },
+    {
+      "command": "!servers remove <index>",
+      "info": "Remove a server of the position in index (index start in 0)"
     },
     {
       "command": "!kick <username>",

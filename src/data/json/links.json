@@ -1,1 +1,1 @@
-[{ "pin": "https://pinterest.com/" }, { "insta": "https://instagram.com/" }]
+{ "links": ["https://pinterest.com/", "https://instagram.com/"] }

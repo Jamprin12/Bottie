@@ -4,7 +4,7 @@ import { servers as server } from "../../data/json/servers.json";
 import fs from "fs";
 import path from "path";
 
-const pathServer = path.join(__dirname, "../../data/json/servers.json")
+const pathServer = path.join(__dirname, "../../data/json/servers.json");
 
 export const Servers = async (msg: Message) => {
   const data = server;
@@ -34,16 +34,12 @@ export const Servers = async (msg: Message) => {
     } else if (serverName === "<name") {
       return;
     } else {
-      servers.push(serverName);      
+      servers.push(serverName);
       const serversJSON = {
         servers,
       };
 
-      fs.writeFile(
-        pathServer,  
-        JSON.stringify(serversJSON),
-        finish
-      );
+      fs.writeFile(pathServer, JSON.stringify(serversJSON), finish);
 
       async function finish() {
         await msg.channel.send("Already has added the server " + serverName);
@@ -60,11 +56,7 @@ export const Servers = async (msg: Message) => {
       servers: [],
     };
 
-    fs.writeFile(
-      pathServer,
-      JSON.stringify(serversJSON),
-      finish
-    );
+    fs.writeFile(pathServer, JSON.stringify(serversJSON), finish);
 
     async function finish() {
       await msg.channel.send("Already has removed all servers");
@@ -75,20 +67,22 @@ export const Servers = async (msg: Message) => {
     const split = msg.content.split(" ");
     const serverIndex = split[2];
     const index = parseInt(serverIndex);
-    server.splice(index, 1);
+    if (serverIndex === "All" || index === NaN) {
+      msg.channel.send("The index server is invalid");
+    } else {
+      server.splice(index, 1);
 
-    const serversJSON = {
-      servers,
-    };
+      const serversJSON = {
+        servers,
+      };
 
-    fs.writeFile(
-      pathServer,
-      JSON.stringify(serversJSON),
-      finish
-    );
+      fs.writeFile(pathServer, JSON.stringify(serversJSON), finish);
 
-    async function finish() {
-      await msg.channel.send("Already has removed all servers");
+      async function finish() {
+        await msg.channel.send(
+          `Already has removed server number ${index + 1}`
+        );
+      }
     }
   }
 };
