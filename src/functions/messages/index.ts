@@ -4,6 +4,7 @@ import { Servers } from "./servers";
 import { Members } from "./mebers";
 import { Help } from "./help";
 import { Channel } from "./channel";
+import {Random} from "./random";
 
 // Functions
 export const messages = async (msg: Message) => {
@@ -12,4 +13,5 @@ export const messages = async (msg: Message) => {
   Servers(msg);
   Members(msg);
   Help(msg);
+  Random(msg);
 };
