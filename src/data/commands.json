@@ -1,43 +1,43 @@
 {
   "commands": [
     {
-      "command": "!help",
+      "command": "help",
       "info": "Show all command of bot"
     },
     {
-      "command": "!servers",
+      "command": "servers",
       "info": "Show all server for your games"
     },
     {
-      "command": "!servers add <name server>",
+      "command": "servers add <name server>",
       "info": "Add your server for your friends"
     },
     {
-      "command": "!servers clean all",
+      "command": "servers clean all",
       "info": "Remove all servers"
     },
     {
-      "command": "!servers remove <index>",
+      "command": "servers remove <index>",
       "info": "Remove a server of the position in index (index start in 0)"
     },
     {
-      "command": "!kick <username>",
+      "command": "kick <username>",
       "info": "For kick users"
     },
     {
-      "command": "!link <page>",
+      "command": "link <page>",
       "info": "Enjoy share page with your friends"
     },
     {
-      "command": "!music join",
+      "command": "music join",
       "info": "Connect to voice channel for listen music"
     },
     {
-      "command": "!music leave",
+      "command": "music leave",
       "info": "Diconnet to voice channel"
     },
     {
-      "command": "!clear",
+      "command": "clear",
       "info": "Clear 100 messages"
     }
   ]

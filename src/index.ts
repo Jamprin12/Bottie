@@ -1,28 +1,18 @@
-// Enviroment Variable
+import { Client } from "discord.js";
 import { config } from "dotenv";
+import { commmandMessages } from "./functions/index";
 config();
 
-import { Client, Message } from "discord.js";
-
-// Initialization
 const bot: Client = new Client();
 
-import { messages } from "./functions/messages/index";
-
-// Initialitation
-bot.once("ready", async () => {
-  await console.log("Bot is ready as", bot.user?.username);
+bot.once("ready", () => {
+  console.log("Bot is ready as", bot.user?.username);
 });
 
-// Functionality
-bot.on("message", (msg: Message) => {
-  messages(msg);
-});
+bot.on("message", commmandMessages);
 
-// Depurations
-bot.on("error", (e: any) => console.error(e));
-bot.on("warn", (e: any) => console.warn(e));
-bot.on("debug", (e: any) => console.info(e));
+bot.on("error", console.error);
+bot.on("warn", console.warn);
+bot.on("debug", console.info);
 
-// Login
 bot.login(`${process.env.DISCORD_TOKEN}`);
